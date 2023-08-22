@@ -9,7 +9,12 @@ import { PostsComponent } from './components/posts/posts.component';
 import { PostDetailComponent } from './components/post-detail/post-detail.component';
 import { AuthFormComponent } from './components/auth-form/auth-form.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { ProtectedRouteComponent } from './components/protected-route/protected-route.component';
+import { BaseComponent } from './components/base/base.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,9 +23,18 @@ import { ProtectedRouteComponent } from './components/protected-route/protected-
     PostDetailComponent,
     AuthFormComponent,
     PageNotFoundComponent,
-    ProtectedRouteComponent,
+    BaseComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    MatInputModule
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

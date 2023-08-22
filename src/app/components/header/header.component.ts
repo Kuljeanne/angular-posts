@@ -7,9 +7,5 @@ import { Component } from '@angular/core';
 
 })
 export class HeaderComponent {
-  public authAction = 'Войти';
-
-  public auth() {
-    console.log('вы вошли');
-  }
+  public user = 'vjnjna';
 }

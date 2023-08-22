@@ -1,3 +1,11 @@
-<div class="header">
-  <h1 class="logo">JSON POSTS</h1>
-</div>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>JSON POSTS</span>
+    <span class="example-spacer"></span>
+    <div class="user">
+      <mat-icon fontIcon="account_circle"></mat-icon>
+      <p>{{user}}</p>
+    </div>
+    <a mat-flat-button color="primary" routerLink="/login">Выйти</a>
+  </mat-toolbar-row>
+</mat-toolbar>

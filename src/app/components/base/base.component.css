@@ -1,0 +1,6 @@
+.posts-section {
+  background-color: #cba7cb;
+  height: calc(100% - 64px);
+  padding: 20px;
+  box-sizing: border-box;
+}

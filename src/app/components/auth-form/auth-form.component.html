@@ -1,1 +1,26 @@
-<p>auth-form works!</p>
+<div class="wrapper">
+  <form [formGroup]="authForm" (ngSubmit)="onSubmit()">
+    <h3 class="title">Авторизироваться</h3>
+    <mat-form-field class="example-full-width">
+      <mat-label>Логин</mat-label>
+      <input matInput formControlName="login">
+      <mat-error *ngIf="authForm.get('login')?.errors?.['required'] && authForm.get('login')?.touched">
+        <strong>Обязательное</strong> поле
+      </mat-error>
+      <mat-error *ngIf="authForm.get('login')?.errors?.['maxlength']">
+        Максимум <strong>16 символов</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Пароль</mat-label>
+      <input type="text" matInput formControlName="password">
+      <mat-error *ngIf="authForm.get('password')?.errors?.['required'] && authForm.get('password')?.touched">
+        <strong>Обязательное</strong> поле
+      </mat-error>
+      <mat-error *ngIf="authForm.get('password')?.errors?.['pattern']">
+        Мин <strong>8 символов</strong> (и 1 цифра)
+      </mat-error>
+    </mat-form-field>
+    <button [disabled]="authForm.invalid" mat-raised-button color="primary">Войти</button>
+  </form>
+</div>
