@@ -13,8 +13,9 @@ export class AuthService {
     localStorage.setItem('user', userData);
     return of(true);
   }
-  logOut() {
+  logOut(): Observable<null> {
     localStorage.removeItem('user');
+    return of(null);
   }
   checkAuth(): Observable<ICurrentUser | null> {
     const data = localStorage.getItem('user');
