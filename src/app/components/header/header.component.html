@@ -2,10 +2,10 @@
   <mat-toolbar-row>
     <span>JSON POSTS</span>
     <span class="example-spacer"></span>
-    <div class="user">
+    <div class="user" *ngIf="user">
       <mat-icon fontIcon="account_circle"></mat-icon>
-      <p>{{user}}</p>
+      <p>{{user.login}}</p>
     </div>
-    <a mat-flat-button color="primary" routerLink="/login">Выйти</a>
+    <button mat-flat-button color="primary" (click)="authorize()">{{authAction}}</button>
   </mat-toolbar-row>
 </mat-toolbar>
