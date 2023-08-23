@@ -2,5 +2,7 @@
   background-color: #cba7cb;
   min-height: calc(100% - 64px);
   padding: 20px;
+  padding-bottom: 100px;
   box-sizing: border-box;
+  position: relative;
 }
