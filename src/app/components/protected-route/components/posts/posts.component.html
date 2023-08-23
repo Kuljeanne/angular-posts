@@ -1,5 +1,5 @@
 <div class="posts-cards">
-  <mat-card class="example-card" *ngFor="let post of posts">
+  <mat-card class="example-card" *ngFor="let post of visiblePosts">
     <mat-card-header>
       <mat-card-subtitle>
         <app-user [user]="getUserName(users, post.userId)"></app-user>
@@ -14,5 +14,6 @@
     </mat-card-actions>
   </mat-card>
 </div>
-<mat-paginator *ngIf="posts.length > 10" [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
+<mat-paginator *ngIf="posts.length > 5" (page)="handlePageEvent($event)" [length]="posts.length" [pageSize]="pageSize"
+  [pageSizeOptions]="showPageSizeOptions ? pageSizeOptions : []">
 </mat-paginator>
