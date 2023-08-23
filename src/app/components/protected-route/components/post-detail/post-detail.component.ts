@@ -21,16 +21,6 @@ export class PostDetailComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // const id = Number(this.route.snapshot.paramMap.get('postId'));
-    // const post$ = this.postService.getPostById(id)
-    // post$.subscribe((post) => (this.post = post));
-    // post$.subscribe((post)=>{
-    //   this.userService.getUserById(post.userId).subscribe(
-    //     user=> this.username = user.username
-    //   )
-    // })
-
     this.post = this.route.data.pipe(map((data)=> data?.['post']))
-
   }
 }

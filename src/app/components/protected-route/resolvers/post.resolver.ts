@@ -8,7 +8,6 @@ export const postResolver: ResolveFn<any> = (route, state) => {
   const router = inject(Router);
 
   return postsService.getPostById(route.params?.['postId']).pipe(
-    delay(1000),
     catchError(() => {
       router.navigate(['posts'])
       return EMPTY
