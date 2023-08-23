@@ -1,21 +1,28 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PostsComponent } from './components/posts/posts.component';
-import { PostDetailComponent } from './components/post-detail/post-detail.component';
 import { AuthFormComponent } from './components/auth-form/auth-form.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { BaseComponent } from './components/base/base.component';
+import { NotAuthComponent } from './components/not-auth/not-auth.component';
+import { logInGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
-    path: 'posts',
+    path: '',
     component: BaseComponent,
     children: [
-      { path: '', component: PostsComponent },
-      { path: ':postId', component: PostDetailComponent },
+      { path: '', component: NotAuthComponent },
+      {
+        path: 'posts',
+        canActivate: [logInGuard],
+        loadChildren: () =>
+          import('./components/protected-route/protected-route.module').then(
+            (m) => m.ProtectedRouteModule
+          ),
+      },
     ],
   },
-  { path: '', redirectTo: 'posts', pathMatch: 'full' },
+
   { path: 'login', component: AuthFormComponent },
   { path: '**', component: PageNotFoundComponent },
 ];

@@ -5,8 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PostsComponent } from './components/posts/posts.component';
-import { PostDetailComponent } from './components/post-detail/post-detail.component';
+import { PostsComponent } from './components/protected-route/components/posts/posts.component';
 import { AuthFormComponent } from './components/auth-form/auth-form.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { BaseComponent } from './components/base/base.component';
@@ -19,6 +18,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { HttpClientModule } from '@angular/common/http';
 import { UserComponent } from './components/user/user.component';
+import { NotAuthComponent } from './components/not-auth/not-auth.component';
+import { PostDetailComponent } from './components/protected-route/components/post-detail/post-detail.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +30,7 @@ import { UserComponent } from './components/user/user.component';
     PageNotFoundComponent,
     BaseComponent,
     UserComponent,
+    NotAuthComponent,
   ],
   imports: [
     BrowserModule,

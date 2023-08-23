@@ -19,20 +19,16 @@ export class HeaderComponent implements OnInit {
     this.authAction = user ? 'Выйти' : 'Войти';
   }
   ngOnInit(): void {
-    this.authService.checkAuth().subscribe({
-      next: (user) => {
-        this.checkUser(user);
-      },
+    this.authService.checkAuth().subscribe((user) => {
+      this.checkUser(user);
     });
   }
 
   authorize() {
     this.user
-      ? this.authService.logOut().subscribe({
-          next: (user) => {
-            this.checkUser(user);
-            console.log(this.user)
-          },
+      ? this.authService.logOut().subscribe((user) => {
+          this.checkUser(user);
+          this.router.navigate(['/'])
         })
       : this.router.navigate(['login']);
   }
