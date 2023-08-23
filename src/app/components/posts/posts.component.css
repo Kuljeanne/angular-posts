@@ -1,0 +1,28 @@
+.posts-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+mat-card {
+  background-color: #665166;
+  padding: 10px;
+  min-width: 300px;
+  min-height: 300px;
+  flex-basis: 19%;
+  border-radius: 10px;
+}
+
+mat-card-title {
+  font-size: 24px;
+  max-width: 200px;
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+
+mat-card-content {
+  font-size: 20px;
+  flex-grow: 1;
+}

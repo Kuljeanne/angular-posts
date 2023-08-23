@@ -13,8 +13,12 @@ import { BaseComponent } from './components/base/base.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { HttpClientModule } from '@angular/common/http';
+import { UserComponent } from './components/user/user.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,16 +28,20 @@ import { ReactiveFormsModule } from '@angular/forms';
     AuthFormComponent,
     PageNotFoundComponent,
     BaseComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    MatInputModule
+    MatInputModule,
+    MatCardModule,
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

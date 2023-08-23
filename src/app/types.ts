@@ -5,7 +5,7 @@ export interface IPost {
   body: string;
 }
 
-export interface IUsers {
+export interface IUser {
   id: number;
   username: string;
 }

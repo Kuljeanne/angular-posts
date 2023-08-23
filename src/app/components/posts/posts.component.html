@@ -1,0 +1,18 @@
+<div class="posts-cards">
+  <mat-card class="example-card" *ngFor="let post of posts">
+    <mat-card-header>
+      <mat-card-subtitle>
+        <app-user [user]="getUserName(users, post.userId)"></app-user>
+      </mat-card-subtitle>
+      <mat-card-title>{{post.title}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{post.body}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <a [routerLink]="[post.id]" mat-button>Перейти</a>
+    </mat-card-actions>
+  </mat-card>
+</div>
+<mat-paginator *ngIf="posts.length > 10" [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
+</mat-paginator>
