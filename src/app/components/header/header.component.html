@@ -1,0 +1,8 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>JSON POSTS</span>
+    <span class="example-spacer"></span>
+    <app-user *ngIf="user" [user]="user.login"></app-user>
+    <button mat-flat-button color="primary" (click)="authorize()">{{authAction}}</button>
+  </mat-toolbar-row>
+</mat-toolbar>
