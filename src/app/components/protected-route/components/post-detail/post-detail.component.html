@@ -3,7 +3,7 @@
     <mat-icon fontIcon="arrow_back"></mat-icon>
     Назад к списку постов
   </a>
-  <mat-card *ngIf="post | async as post">
+  <mat-card *ngIf="post">
     <mat-card-header>
       <mat-card-title>{{post.title | uppercase}}</mat-card-title>
       <mat-card-subtitle>

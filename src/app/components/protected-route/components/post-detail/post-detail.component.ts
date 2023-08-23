@@ -11,7 +11,7 @@ import { IPost } from 'src/app/types';
   styleUrls: ['./post-detail.component.css'],
 })
 export class PostDetailComponent implements OnInit {
-  public post!: Observable<IPost>;
+  public post!: IPost;
   public username!: string;
 
   constructor(
@@ -21,6 +21,13 @@ export class PostDetailComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.post = this.route.data.pipe(map((data)=> data?.['post']))
+    const id = Number(this.route.snapshot.paramMap.get('postId'));
+    const post$ = this.postService.getPostById(id)
+    post$.subscribe((post) => (this.post = post));
+    post$.subscribe((post)=>{
+      this.userService.getUserById(post.userId).subscribe(
+        user=> this.username = user.username
+      )
+    })
   }
 }
