@@ -1,0 +1,19 @@
+.not-found {
+  box-sizing: border-box;
+  padding: 40px;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../../../assets/img/error.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+p {
+  display: inline-block;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 30px;
+  padding:40px 20px;
+  background-color: rgba(137, 43, 226, 0.615);
+}
