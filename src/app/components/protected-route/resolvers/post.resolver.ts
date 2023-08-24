@@ -1,6 +1,6 @@
 import { inject } from '@angular/core';
 import { ResolveFn, Router } from '@angular/router';
-import { EMPTY, catchError, delay } from 'rxjs';
+import { catchError } from 'rxjs';
 import { PostsService } from 'src/app/services/posts.service';
 import { IPost } from 'src/app/types';
 
