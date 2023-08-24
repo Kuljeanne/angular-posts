@@ -15,12 +15,12 @@ export class PostsService {
   getPosts() {
     return this.http
       .get<IPost[]>(this.url)
-      .pipe(retry(3), catchError(this.errorHandler.handleError));
+      .pipe(retry(2), catchError(this.errorHandler.handleError));
   }
 
   getPostById(id: number) {
     return this.http
       .get<IPost>(`${this.url}/${id}`)
-      .pipe(retry(3), catchError(this.errorHandler.handleError));
+      .pipe(retry(2), catchError(this.errorHandler.handleError));
   }
 }
