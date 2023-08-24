@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IPost } from '../types';
-import { Observable, catchError, of, retry, throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs';
 import { ErrorService } from './error.service';
 
 @Injectable({
