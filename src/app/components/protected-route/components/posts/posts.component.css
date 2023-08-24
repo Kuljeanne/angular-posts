@@ -36,3 +36,7 @@ mat-paginator {
   left:0;
   right: 0;
 }
+
+mat-spinner {
+  margin: 100px auto;
+}

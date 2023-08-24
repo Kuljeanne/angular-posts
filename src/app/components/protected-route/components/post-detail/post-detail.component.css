@@ -14,3 +14,7 @@ mat-card {
 mat-card-content {
   font-size: 20px;
 }
+
+mat-spinner {
+  margin: 100px auto;
+}
