@@ -20,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserComponent } from './components/user/user.component';
 import { NotAuthComponent } from './components/not-auth/not-auth.component';
 import { PostDetailComponent } from './components/protected-route/components/post-detail/post-detail.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +45,7 @@ import { PostDetailComponent } from './components/protected-route/components/pos
     MatInputModule,
     MatCardModule,
     MatPaginatorModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent],

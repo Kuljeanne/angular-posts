@@ -1,6 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IPost, IUser } from '../types';
+import { IPost } from '../types';
+import { Observable, catchError, of, retry, throwError } from 'rxjs';
+import { ErrorService } from './error.service';
 
 @Injectable({
   providedIn: 'root',
@@ -8,13 +10,17 @@ import { IPost, IUser } from '../types';
 export class PostsService {
   private url: string = 'https://jsonplaceholder.typicode.com/posts';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private errorHandler: ErrorService) {}
 
   getPosts() {
-    return this.http.get<IPost[]>(this.url);
+    return this.http
+      .get<IPost[]>(this.url)
+      .pipe(retry(3), catchError(this.errorHandler.handleError));
   }
 
   getPostById(id: number) {
-    return this.http.get<IPost>(`${this.url}/${id}`);
+    return this.http
+      .get<IPost>(`${this.url}/${id}`)
+      .pipe(retry(3), catchError(this.errorHandler.handleError));
   }
 }

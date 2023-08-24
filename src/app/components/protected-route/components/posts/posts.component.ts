@@ -13,7 +13,7 @@ import { IPost, IUser } from 'src/app/types';
 export class PostsComponent implements OnInit {
   public posts: IPost[] = [];
   public users: IUser[] = [];
-
+  public isLoading: boolean = true;
   public pageSize = 10;
   public pageIndex = 0;
   public pageSizeOptions = [5, 10, 25];
@@ -33,6 +33,7 @@ export class PostsComponent implements OnInit {
     this.postService.getPosts().subscribe((posts) => {
       this.posts = posts;
       this.visiblePosts = this.posts.slice(0, this.pageSize);
+      this.isLoading = false
     });
   }
 
