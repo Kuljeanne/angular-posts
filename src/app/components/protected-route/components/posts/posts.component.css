@@ -6,6 +6,7 @@
 }
 
 mat-card {
+  min-height: 280px;
   background-color: #665166;
   padding: 10px;
   flex-basis: 19%;
