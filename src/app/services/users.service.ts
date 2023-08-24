@@ -15,13 +15,13 @@ export class UsersService {
   getUsers() {
     return this.http
       .get<IUser[]>(this.url)
-      .pipe(retry(3), catchError(this.errorHandler.handleError));
+      .pipe(retry(2), catchError(this.errorHandler.handleError));
   }
 
   getUserById(id: number) {
     return this.http
       .get<IUser>(`${this.url}/${id}`)
-      .pipe(retry(3), catchError(this.errorHandler.handleError));
+      .pipe(retry(2), catchError(this.errorHandler.handleError));
   }
 
   getUserName(users: IUser[], userId: number): string | undefined {
